@@ -18,7 +18,7 @@ const Details = () => {
       }
     };
     fetchRecipeDetails();
-  }, [id]); //The [ ] refer the dependencies for which we based render
+  }, []);
 
   return (
     <div className="container mx-auto py-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
