@@ -1,0 +1,16 @@
+.favorite-container {
+  display: flex;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+}
+
+.favorite-tex {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 800;
+  text-align: center;
+  color: #000000;
+}

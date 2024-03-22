@@ -6,8 +6,8 @@ const FoodDataContext = createContext();
 export const FoodDataProvider = ({ children }) => {
   const [searchParam, setSearchParam] = useState("");
   const [loading, setLoading] = useState(false);
-  const [recipeList, setRecipeList] = useState();
-  const [recipeDetails, setRecipeDetails] = useState();
+  const [recipeList, setRecipeList] = useState([]);
+  const [recipeDetails, setRecipeDetails] = useState([]);
   const [favoriteList, setFavoriteList] = useState([]);
 
   const navigate = useNavigate();
