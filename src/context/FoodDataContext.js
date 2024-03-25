@@ -20,27 +20,28 @@ export const FoodDataProvider = ({ children }) => {
     if (index === -1) {
       copyFavoriteList.push(currentItem);
     } else {
-      copyFavoriteList.splice(currentItem);
+      copyFavoriteList.splice(index, 1);
     }
     setFavoriteList(copyFavoriteList);
+    console.log(copyFavoriteList);
   };
-
-  console.log(favoriteList, "favorite");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch(
-        `https://forkify-api.herokuapp.com/api/v2/recipes?search=${searchParam}`
-      );
-      const data = await res.json();
-      if (data?.data?.recipes) {
-        setRecipeList(data?.data?.recipes);
-        setLoading(false);
-        setSearchParam("");
-        navigate("/");
-      }
+      setTimeout(async () => {
+        const res = await fetch(
+          `https://forkify-api.herokuapp.com/api/v2/recipes?search=${searchParam}`
+        );
+        const data = await res.json();
+        if (data?.data?.recipes) {
+          setRecipeList(data?.data?.recipes);
+          setLoading(false);
+          setSearchParam("");
+          navigate("/");
+        }
+      }, 500);
     } catch (err) {
       console.log(e);
       setLoading(false);

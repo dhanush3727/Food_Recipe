@@ -1,12 +1,17 @@
 import { useContext } from "react";
 import FoodDataContext from "../../context/FoodDataContext";
 import RecipeItem from "./RecipeItem";
+import { AnimatedCircle } from "react-craftify-spinners";
 import "./Home.css";
 
 const Home = () => {
   const { recipeList, loading } = useContext(FoodDataContext);
   if (loading) {
-    return <h2>Loading... Please Wait</h2>;
+    return (
+      <div className="loading">
+        <AnimatedCircle color="#000" />
+      </div>
+    );
   }
   return (
     <div className="home-container">
